@@ -1,7 +1,35 @@
-@import "tailwindcss";
+/* Diretivas do Tailwind */
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
+/* Defina as cores personalizadas, se necessário */
 :root {
     --color-mint-700: oklch(0.21 0.034 264.665);
     --color-mint-800: oklch(0.21 0.034 264.665);
     --color-mint-900: oklch(0.21 0.034 264.665);
+}
+
+/* Aplique a transição para suavizar a troca de temas */
+html {
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #0f0f0f;
+    /* Preto quase puro */
+    color: #ffffff;
+}
+
+/* Define o tema escuro como padrão e remove qualquer referência ao tema claro */
+@layer base {
+    body {
+        background-color: #1a202c;
+        /* equivalent to bg-gray-900 */
+        color: #ffffff;
+        /* equivalent to text-white */
+    }
+
+    main {
+        background-color: #1a202c;
+        /* equivalent to bg-gray-900 */
+        color: #ffffff;
+        /* equivalent to text-white */
+    }
 }
